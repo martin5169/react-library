@@ -1,0 +1,92 @@
+.general{
+  display: flex;
+  gap: 150px;
+  padding: 10px;
+ 
+}
+.container-libros{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  padding: 30px;
+}
+.containerLectura{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:25px;
+  padding: 10px;
+  background-color: darkcyan;
+  border-style: double;
+
+}
+
+.imagenLectura.img{
+  position: relative;
+}
+
+.filtros{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 40px;
+}
+.list{
+  padding: 25px;
+}
+h2,h3{
+  padding: 15px;
+}
+.contenido{
+  text-align: left;
+  background-color: #242424;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.titulo{
+  padding: 20px;
+  margin-bottom: 50px;
+  background-color: cadetblue;
+
+}
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+.borrar-icon {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  cursor: pointer;
+}
