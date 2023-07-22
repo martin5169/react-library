@@ -74,7 +74,7 @@ function App() {
       <div className="titulo">
         <h1>Library</h1>
       </div>
-      <h4>{libros.length} libros disponibles</h4>
+      <h4>LIBROS DISPONIBLES: {libros.length}</h4>
       <div className="filtros">
         <input
           type="text"

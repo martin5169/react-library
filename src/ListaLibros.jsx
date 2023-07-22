@@ -26,11 +26,11 @@ function ListaLibros({libros,cargarLista,lista}) {
         </Accordion.Body>
       </Accordion.Item>
       </Accordion>
-           {!lista.includes(l.book)?
-           <Button variant="primary" onClick={()=>{
+           {
+           <Button variant="primary" disabled={lista.includes(l.book)} onClick={()=>{
             cargarLista(l.book)
-           }}>Agregar</Button>
-          :<Button variant="warning">En lista</Button>}
+           }}>AGREGAR</Button>
+            }
        </Card>
      
     ))}
