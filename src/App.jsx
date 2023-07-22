@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { library } from "./book.json";
-import ListaLectura from "./ListaLectura";
-import ListaLibros from "./ListaLibros";
+import ListaLectura from "./components/ListaLectura";
+import ListaLibros from "./components/ListaLibros";
 import Storage from "./storage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
