@@ -4,7 +4,8 @@ import { library } from "./book.json";
 import ListaLectura from "./ListaLectura";
 import ListaLibros from "./ListaLibros";
 import Storage from "./storage";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 const storage = new Storage("lista");
 
@@ -58,21 +59,33 @@ function App() {
       librosFiltrados = librosFiltrados.filter(
         (libro) => libro.book.genre === filtroGenero
       );
-    }
-
-    librosFiltrados = librosFiltrados.filter(
-      (libro) => libro.book.pages <= filtroPaginas
-    );
-
-    setLibros(librosFiltrados);
-    cargarGeneros();
+      librosFiltrados = librosFiltrados.filter(
+        (libro) => libro.book.pages <= filtroPaginas
+      );
+      }
+      setLibros(librosFiltrados);
+      const storedList = storage.getList();
+      setLista(storedList);
+      cargarGeneros();
+      
+    }, [filtroGenero, filtroPaginas]);
     
-  }, [filtroGenero, filtroPaginas]);
+    useEffect(() => {
+      const storedList = storage.getList();
+      setLista(storedList);
+      cargarGeneros();
+    }, []);
+  
+    useEffect(() => {
+      storage.saveList(lista); // Guardar la lista en localStorage cada vez que cambie
+    }, [lista]);
+  
+
 
   return (
     <div className="contenido">
       <div className="titulo">
-        <h1>Library</h1>
+        <h1>Library <FontAwesomeIcon icon={faBook} /></h1>
       </div>
       <h4>LIBROS DISPONIBLES: {libros.length}</h4>
       <div className="filtros">
@@ -81,6 +94,7 @@ function App() {
           placeholder="Busca por titulo"
           onChange={buscarPorNombre}
         ></input>
+          <p className="list">Filtrar hasta {filtroPaginas} paginas</p>
         <input
           type="range"
           onChange={filtrarPorPaginas}
@@ -89,7 +103,6 @@ function App() {
           value={filtroPaginas}
           step={100}
         />
-        <p className="list">Filtrar hasta {filtroPaginas} paginas</p>
         <p className="list">Filtrar por genero</p>
         <select name="" id="" onChange={filtrarGeneros}>
           <option value={"todas"}>Todas</option>
@@ -99,7 +112,7 @@ function App() {
         </select>
       </div>
       <div className="general">
-        <ListaLibros libros={libros} cargarLista={cargarLista} lista={lista} />
+      <ListaLibros libros={libros} setLibros={setLibros} lista={lista} setLista={setLista} cargarLista={cargarLista} />
         <ListaLectura lista={lista} eliminar={eliminar} />
       </div>
     </div>

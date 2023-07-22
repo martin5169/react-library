@@ -15,9 +15,8 @@ function ListaLibros({libros,cargarLista,lista}) {
          <Card.Body>
            <Card.Title>{l.book.title}</Card.Title>
            <Card.Text>
-            {l.book.author.name}
+            By {l.book.author.name}
            </Card.Text>
-           </Card.Body>
            <Accordion flush>
       <Accordion.Item eventKey="0">
         <Accordion.Header>Ver sinopsis</Accordion.Header>
@@ -26,10 +25,11 @@ function ListaLibros({libros,cargarLista,lista}) {
         </Accordion.Body>
       </Accordion.Item>
       </Accordion>
+           </Card.Body>
            {
-           <Button variant="primary" disabled={lista.includes(l.book)} onClick={()=>{
+           <Button variant="secondary" disabled={lista.includes(l.book)} onClick={()=>{
             cargarLista(l.book)
-           }}>AGREGAR</Button>
+           }}>{lista.includes(l.book)?"EN LISTA":"AGREGAR"}</Button>
             }
        </Card>
      

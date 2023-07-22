@@ -1,16 +1,16 @@
 class Storage {
-    constructor(key) {
-      this.key = key;
-    }
-  
-    getData() {
-      const data = localStorage.getItem(this.key);
-      return data ? JSON.parse(data) : [];
-    }
-  
-    setData(data) {
-      localStorage.setItem(this.key, JSON.stringify(data));
-    }
+  constructor(key) {
+    this.key = key;
   }
-  
-  export default Storage;
+
+  getList() {
+    const storedData = localStorage.getItem(this.key);
+    return storedData ? JSON.parse(storedData) : [];
+  }
+
+  saveList(lista) {
+    localStorage.setItem(this.key, JSON.stringify(lista));
+  }
+}
+
+export default Storage;
