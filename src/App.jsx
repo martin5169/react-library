@@ -55,14 +55,18 @@ function App() {
   useEffect(() => {
     let librosFiltrados = library;
 
-    if (filtroGenero !== "todas") {
+      if (filtroGenero !== "todas") {
       librosFiltrados = librosFiltrados.filter(
         (libro) => libro.book.genre === filtroGenero
       );
-      librosFiltrados = librosFiltrados.filter(
-        (libro) => libro.book.pages <= filtroPaginas
-      );
+     
       }
+      if (filtroPaginas !== 3000) {
+        librosFiltrados = librosFiltrados.filter(
+          (libro) => libro.book.pages <= filtroPaginas
+        );
+      }
+
       setLibros(librosFiltrados);
       const storedList = storage.getList();
       setLista(storedList);
@@ -112,7 +116,7 @@ function App() {
         </select>
       </div>
       <div className="general">
-      <ListaLibros libros={libros} setLibros={setLibros} lista={lista} setLista={setLista} cargarLista={cargarLista} />
+      <ListaLibros libros={libros} lista={lista} setLista={setLista} cargarLista={cargarLista} />
         <ListaLectura lista={lista} eliminar={eliminar} />
       </div>
     </div>
