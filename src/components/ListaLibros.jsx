@@ -27,9 +27,9 @@ function ListaLibros({libros,cargarLista,lista}) {
       </Accordion>
            </Card.Body>
            {
-           <Button variant="secondary" disabled={lista.includes(l.book)} onClick={()=>{
+           <Button variant="secondary" disabled={lista.some((libro)=> libro.title === l.book.title)} onClick={()=>{
             cargarLista(l.book)
-           }}>{lista.includes(l.book)?"EN LISTA":"AGREGAR"}</Button>
+           }}> {lista.some((item) => item.title === l.book.title) ? "EN LISTA" : "AGREGAR"}</Button>
             }
        </Card>
      
