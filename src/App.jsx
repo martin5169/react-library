@@ -3,7 +3,7 @@ import "./App.css";
 import { library } from "./book.json";
 import ListaLectura from "./components/ListaLectura";
 import ListaLibros from "./components/ListaLibros";
-import usePersistentStorage from "./usePersistentStorage"; // Importar el custom hook aquí
+import usePersistentStorage from "./usePersistentStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 
@@ -98,19 +98,20 @@ function App() {
         />
         <p className="list">Filtrar por genero</p>
         <select name="" id="" onChange={filtrarGeneros}>
-          <option value={"todas"}>Todas</option>
+          <option value={"todas"}>Todos</option>
           {generos.map((g, index) => (
             <option key={index}>{g}</option>
           ))}
         </select>
       </div>
       <div className="general">
+        <div className="container-libros">
         <ListaLibros
           libros={libros}
           lista={lista}
           setLista={setLista}
           cargarLista={cargarLista}
-        />
+        /></div>
         {lista && lista.length > 0 && <ListaLectura lista={lista} eliminar={eliminar} />}
       </div>
     </div>

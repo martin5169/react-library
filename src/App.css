@@ -1,20 +1,19 @@
 .general{
   display: flex;
-  gap: 150px;
+  gap: 65px;
   padding: 10px;
- 
 }
 .container-libros{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 20px;
-  padding: 30px;
+  padding: 10px;
 }
 .containerLectura{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap:25px;
-  padding: 10px;
+  padding: 20px;
   background-color: darkcyan;
   border-style: double;
 
@@ -86,4 +85,47 @@ h2,h3{
   top: 1px;
   right: 1px;
   cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  /* ... (existing media queries) */
+  
+  .container-libros {
+    grid-template-columns: repeat(1, 1fr); /* Adjust the columns for smaller screens */
+    gap: 10px;
+  }
+  
+  .containerLectura {
+    grid-template-columns: repeat(1, 1fr); /* Adjust the columns for smaller screens */
+    gap: 10px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* ... (existing media queries) */
+  
+  .container-libros {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the columns for medium screens */
+    gap: 15px;
+  }
+  
+  .containerLectura {
+    grid-template-columns: repeat(2, 1fr); /* Adjust the columns for medium screens */
+    gap: 15px;
+  }
+}
+
+/* Large devices (desktops) */
+@media only screen and (min-width: 1025px) {
+  /* ... (existing media queries) */
+  
+  .container-libros {
+    grid-template-columns: repeat(4, 1fr); /* Adjust the columns for larger screens */
+    gap: 20px;
+  }
+  
+  .containerLectura {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the columns for larger screens */
+    gap: 25px;
+  }
 }
