@@ -49,19 +49,19 @@ h2,h3{
   background-color: cadetblue;
 
 }
-/* Container needed to position the button. Adjust the width as needed */
+
 .container {
   position: relative;
   width: 50%;
 }
 
-/* Make the image responsive */
+
 .container img {
   width: 100%;
   height: auto;
 }
 
-/* Style the button and place it in the middle of the container/image */
+
 .container .btn {
   position: absolute;
   top: 85%;
@@ -87,45 +87,40 @@ h2,h3{
   cursor: pointer;
 }
 @media only screen and (max-width: 600px) {
-  /* ... (existing media queries) */
-  
+   
   .container-libros {
-    grid-template-columns: repeat(1, 1fr); /* Adjust the columns for smaller screens */
+    grid-template-columns: repeat(1, 1fr); 
     gap: 10px;
   }
   
   .containerLectura {
-    grid-template-columns: repeat(1, 1fr); /* Adjust the columns for smaller screens */
+    grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
 }
 
-/* Medium devices (tablets) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-  /* ... (existing media queries) */
-  
+ 
   .container-libros {
-    grid-template-columns: repeat(3, 1fr); /* Adjust the columns for medium screens */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 15px;
   }
   
   .containerLectura {
-    grid-template-columns: repeat(2, 1fr); /* Adjust the columns for medium screens */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 15px;
   }
 }
 
-/* Large devices (desktops) */
 @media only screen and (min-width: 1025px) {
-  /* ... (existing media queries) */
   
   .container-libros {
-    grid-template-columns: repeat(4, 1fr); /* Adjust the columns for larger screens */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
   
   .containerLectura {
-    grid-template-columns: repeat(3, 1fr); /* Adjust the columns for larger screens */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 25px;
   }
 }
