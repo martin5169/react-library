@@ -5,30 +5,46 @@
 }
 .container-libros{
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  border-right: 5px solid whitesmoke;
+  margin-bottom: 50px;
+}
+.lista-completa{
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  padding: 10px;
+  justify-content: center;
+}
+.lista-oculta{
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 25px;
+}
+.listas{
+  display: grid;
+  grid-template-columns: 65% 35%;
+  padding: 20px;
 }
 .containerLectura{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap:25px;
-  padding: 20px;
-  background-color: darkcyan;
-  border-style: double;
-
+  position: sticky;
+  text-align: center;
+  top: 20px;
+  max-height: calc(70vh - 20px);
+  margin-left: 50px;
+  color: antiquewhite;
 }
-
-.imagenLectura.img{
-  position: relative;
+.book-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+  gap: 10px;
 }
 
 .filtros{
   display: flex;
+
   align-items: center;
-  justify-content: center;
-  padding: 20px;
-  gap: 40px;
+  margin: 10px;
+  gap: 30px;
+  color: antiquewhite;
 }
 .list{
   padding: 25px;
@@ -37,55 +53,42 @@ h2,h3{
   padding: 15px;
 }
 .contenido{
-  text-align: left;
-  background-color: #a09b9b;
-  color: rgba(255, 255, 255, 0.87);
+  opacity: 2;
+  background-image: radial-gradient(#64748b 1.1500000000000001px,transparent 0),radial-gradient(#64748b 1.1500000000000001px,#111516 0);
+  background-size: 26px 26px;
   text-align: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS'
 }
-.titulo{
-  padding: 20px;
+.contenido h4{
+  color: antiquewhite;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
   margin-bottom: 50px;
-  background-color: cadetblue;
-
+  background-image: linear-gradient(to bottom, #2e5791, #0a294e);
+  color: antiquewhite;
+}
+.verLista{
+ background-color: antiquewhite;
+  
 }
 
-.container {
-  position: relative;
-  width: 50%;
-}
-
-
-.container img {
-  width: 100%;
-  height: auto;
-}
-
-
-.container .btn {
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: red;
-  color: white;
-  font-size: 10px;
-  padding: 10px;
-  border: none;
+.titulo button {
+  background-color: antiquewhite;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-.container .btn:hover {
-  background-color: black;
-}
 .borrar-icon {
   position: absolute;
   top: 1px;
   right: 1px;
   cursor: pointer;
 }
+
 @media only screen and (max-width: 600px) {
    
   .container-libros {
@@ -120,7 +123,11 @@ h2,h3{
   }
   
   .containerLectura {
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 25px;
+  position: sticky;
+  text-align: center;
+  top: 20px;
+  max-height: calc(70vh - 20px);
+  margin-left: 50px;
+  color: antiquewhite;
   }
 }

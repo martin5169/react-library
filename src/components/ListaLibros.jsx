@@ -3,14 +3,14 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Accordion from 'react-bootstrap/Accordion';
 
-function ListaLibros({libros,cargarLista,lista}) {
+function ListaLibros({libros,cargarLista,lista,estilo}) {
     if(libros.length==0)
     return <div> No hay libros</div>
     else{
   return (
-    <div className="container-libros">
+    <div className={estilo}>
     {libros && libros.map((l, index) => (
-         <Card style={{ width: '10rem' }} key={index} className="text-center"> 
+         <Card style={{ width: '11rem' }} key={index} className="text-center"> 
          <Card.Img variant="top" src={l.book.cover}  />
          <Card.Body>
            <Card.Title>{l.book.title}</Card.Title>
@@ -19,9 +19,10 @@ function ListaLibros({libros,cargarLista,lista}) {
            </Card.Text>
            <Accordion flush>
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Ver sinopsis</Accordion.Header>
+        <Accordion.Header>Ver Detalles</Accordion.Header>
         <Accordion.Body>
-          {l.book.synopsis}
+          <p>Páginas: {l.book.pages}</p>
+          <p>{l.book.synopsis}</p>
         </Accordion.Body>
       </Accordion.Item>
       </Accordion>

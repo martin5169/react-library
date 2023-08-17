@@ -4,28 +4,19 @@ import Card from "react-bootstrap/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-function ListaLectura({ lista, eliminar }) {
-  if (lista.length === 0) {
-    return (
-      <div>
 
-        <p>No hay libros en la lista de lectura</p>
-      </div>
-    );
-  } else {
+function ListaLectura({ lista, eliminar }) {
+
     return (
-      <div className="lectura">
-        <h4>LISTA DE LECTURA</h4>
-        <p>
-          {lista.length > 0
-            ? "CANTIDAD: " + lista.length + " LIBROS"
-            : "No hay libros en la lista de lectura"}
-        </p>
-        <div className="containerLectura">
+      <div className="containerLectura">
+        <h4>Lista de lectura</h4>       
+          <p>{lista.length > 0
+            ? ""
+            : "Aún no hay libros cargados."}</p>
+          <div className="book-cards">
           {lista.map((l, index) => (
             <Card style={{ width: "6.5rem" }} key={index}>
               <Card.Body>
-                {/* Add a check for the 'cover' property before rendering */}
                 {l && l.cover && <Card.Img variant="top" src={l.cover} />}
                 <span
                   className="borrar-icon"
@@ -39,9 +30,9 @@ function ListaLectura({ lista, eliminar }) {
             </Card>
           ))}
         </div>
-      </div>
+        </div>
     );
-  }
+  
 }
 
 export default ListaLectura;
